@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tag Web Application</title>
+    <link rel="shortcut icon" href="assets/images/favicon_1.ico">
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+</head>
+
+<body>
+    <!-- loader -->
+    <div class="loader-img-container">
+        <img src="assets/images/loader-red.gif">
+    </div>
+    <!-- loader -->
+
+    <!---------- Pagination Section ---------->
+    <div id="main">
+    </div>
+    <!---------- Pagination Section ---------->
+
+    <!---------- Pagination Controls ---------->
+    <div class="pagination_container">
+        <div class="padd_common">zoom: 100%</div>
+        <div class="padd_common">
+            <span>Pages:</span>
+            <span class="numberList">1</span>
+            <span class="totalNumbers"></span>
+        </div>
+        <div class="padd_common">
+            <a href="javascript:;" class="previousPage" data-id="1"><img src="assets/images/pa_images/previous.png"></a>
+            <a href="javascript:;" class="nextPage" data-id="2"><img src="assets/images/pa_images/next.png"></a>
+        </div>
+        <div class="padd_common">
+            <div>Print Label Templates:</div>
+            <div>
+                <select>
+                    <option>None</option>
+                    <option>2" x 1.25" Printable Paper Label</option>
+                    <option>2" x 1" Printable Paper Label</option>
+                    <option>3.5" x 2" Printable Paper Label</option>
+                    <option>3.25" x 1.25" Printable Paper Label</option>
+                    <option>7" x 5" Printable Paper Label</option>
+                </select>
+            </div>
+        </div>
+        <div class="padd_common">
+            <a id="print_page" href="javascript:;"><img src="assets/images/pa_images/print.png"></a>
+        </div>
+    </div>
+    <!---------- Pagination Controls ---------->
+    <script src="assets/js/jquery.min.js" type="text/javascript"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
