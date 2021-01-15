@@ -2099,7 +2099,7 @@ require_once('lib/connection.php'); ?>
                     { "targets": '_all', visible: false }
                 ],
                 paging: false,
-                "ajax": "../tagapp/lib/functions.php?action=getItmData",
+                "ajax": "../lib/functions.php?action=getItmData",
                 "columns": [
                     { "data": "id","width": "2%" },
                     { "data": "label" },
