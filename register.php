@@ -24,33 +24,40 @@
             <div class="panel panel-color panel-primary panel-pages">
                 <div class="panel-heading bg-img"> 
                     <div class="bg-overlay"></div>
-                    <h3 class="text-center m-t-10 text-white"> Login </h3>
+                    <h3 class="text-center m-t-10 text-white"> Register </h3>
                 </div> 
 
 
                 <div class="panel-body">
-                <form class="form-horizontal m-t-20" name="frm-login">
+                <form class="form-horizontal m-t-20" name="frm-register">
                     
                     <div class="form-group">
                         <div class="col-xs-12">
                             <label>Email</label>
-                            <input class="form-control input-lg lgn" name="log-email" type="text">
+                            <input class="form-control input-lg lgn" name="register-email" type="text" autoComplete='email'>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <label>Username</label>
+                            <input class="form-control input-lg lgn" name="register-name" type="text">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-xs-12">
                             <label>Password</label>
-                            <input class="form-control input-lg lgn" name="log-pass" type="password">
+                            <input class="form-control input-lg lgn" name="register-pass" type="password">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-xs-12">
                             <div class="checkbox checkbox-primary">
-                                    <input id="checkbox2" type="checkbox">
+                                    <input id="checkbox2" type="checkbox" name='terms'>
                                     <label for="checkbox2">
-                                        Remember me
+                                        Terms and Policy
                                     </label>
                                 </div>
                         </div>
@@ -58,8 +65,8 @@
                     
                     <div class="form-group">
                         <div class="col-xs-12">
-                            <button name="btn-submit" class="btn btn-primary btn-lg w-lg waves-effect waves-light" type="submit">Sign In</button>
-                            <a href="register.php"><button class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 btn btn-primary btn-lg w-lg waves-effect waves-light" type="button">Sign Up</button></a>
+                            <a href="index.php"><button name="btn-submit" class="btn btn-primary btn-lg w-lg waves-effect waves-light" type="button">Sign In</button></a>
+                            <button class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 btn btn-primary btn-lg w-lg waves-effect waves-light" type="submit">Sign Up</button>
                         </div>
                     </div>    
                     <div class="form-group alrt-dv" style="display: none;">
@@ -67,11 +74,6 @@
                             <div class="alert alert-danger">
                                 <a href="#" class="alert-link"></a>
                             </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <a href="recoverpw.html"><i class="fa fa-lock m-r-5"></i> Forgot your password?</a>
                         </div>
                     </div>
                 </form> 
@@ -110,11 +112,19 @@
         <script type="text/javascript">
             $(document).ready(function() {
                                     
-                $('form[name="frm-login"]').submit(function(event) {
-                    var user_name=$("input[name='log-email']").val();
-                    var password=$("input[name='log-pass']").val();
+                $('form[name="frm-register"]').submit(function(event) {
+                    var terms_checked=$("input[name='terms']").prop("checked") ? 1 : 0 ;
+                    if(terms_checked===0) {
+                        $(".alrt-dv").css('display','block')
+                        $(".alert-link").html('Terms and Policy');
+                        return false;
+                    }
 
-                    $.post('lib/control.php', {user_name: user_name,password: password}, function(data, textStatus, xhr)
+                    var user_email=$("input[name='register-email']").val();
+                    var user_name=$("input[name='register-name']").val();
+                    var password=$("input[name='register-pass']").val();
+
+                    $.post('lib/register.php', {user_email: user_email, user_name: user_name, password: password}, function(data, textStatus, xhr)
                     {
                         $(".alrt-dv").css('display','block')
                         $(".alert-link").html(data);
