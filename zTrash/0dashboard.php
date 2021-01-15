@@ -2373,13 +2373,13 @@ $(document).ready(function(){
 			size: 'viewport'
 		}).then(function(response){
 			$.ajax({
-				url:"../tagapp/lib/upload.php",
+				url:"../lib/upload.php",
 				type: "POST",
 				data:{"image": response},
 				success:function(data){
 					$( '#uploadimageModal' ).modal( 'hide' );
-					$('.prev-col .prev-parent .contain-div-prev .img-div-prev > img').attr( 'src', '../tagapp/upload_images/items/'+data );
-					$('.prev-col .prev-parent .contain-div-prev .img-div > img').attr( 'src', '../tagapp/upload_images/items/'+data);
+					$('.prev-col .prev-parent .contain-div-prev .img-div-prev > img').attr( 'src', '../upload_images/items/'+data );
+					$('.prev-col .prev-parent .contain-div-prev .img-div > img').attr( 'src', '../upload_images/items/'+data);
 					setData( data, 'image' );
 				}
 			});
@@ -2393,10 +2393,10 @@ $(document).ready(function(){
 			var url_path = event.target.result;				
 			$.ajax({
 				type: 'POST',
-				url: '../tagapp/lib/upload.php',
+				url: '../lib/upload.php',
 				data:{"image": url_path},
 				success: function( response ) {
-					$( '.print-list-datamodal .modal-dialog .modal-body .contain-div .img-div > img' ).attr( 'src', '../tagapp/upload_images/items/' + response );
+					$( '.print-list-datamodal .modal-dialog .modal-body .contain-div .img-div > img' ).attr( 'src', '../upload_images/items/' + response );
 					setData( response, 'image' );
 				}
 			});
@@ -2410,11 +2410,11 @@ $(document).ready(function(){
 			}).then( function(){
 				var url_path = event.target.result;
 				$.ajax({
-					url:"../tagapp/lib/upload.php",
+					url:"../lib/upload.php",
 					type: "POST",
 					data:{"image": url_path},
 					success:function( data ){
-						$( '.print-list-datamodal .modal-dialog .modal-body .contain-div .img-div > img' ).attr( 'src', '../tagapp/upload_images/items/' + data );
+						$( '.print-list-datamodal .modal-dialog .modal-body .contain-div .img-div > img' ).attr( 'src', '../upload_images/items/' + data );
 						setData( data );
 					}
 				});
@@ -2522,7 +2522,7 @@ $(document).ready(function(){
 			{ "targets": '_all', visible: false }
 		],
 		paging: false,
-		"ajax": "../tagapp/lib/functions.php?action=getItmData",
+		"ajax": "../lib/functions.php?action=getItmData",
 		"columns": [
 			{ "data": "id","width": "2%" },
 			{ "data": "label" },

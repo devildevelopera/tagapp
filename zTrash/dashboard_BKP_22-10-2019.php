@@ -1968,14 +1968,14 @@ require_once('lib/connection.php'); ?>
                   size: 'viewport'
                 }).then(function(response){
                   $.ajax({
-                    url:"../tagapp/lib/upload.php",
+                    url:"../lib/upload.php",
                     type: "POST",
                     data:{"image": response},
                     success:function(data)
                     {
                       $('#uploadimageModal').modal('hide');
-                      $elem_prev.attr('src', '../tagapp/upload_images/items/'+data);
-                      $elem_parent.attr('src', '../tagapp/upload_images/items/'+data);           
+                      $elem_prev.attr('src', '../upload_images/items/'+data);
+                      $elem_parent.attr('src', '../upload_images/items/'+data);           
                     }
                   });
                 })
@@ -2012,7 +2012,7 @@ require_once('lib/connection.php'); ?>
                     { "targets": '_all', visible: false }
                 ],
                 paging: false,
-                "ajax": "../tagapp/lib/functions.php?action=getItmData",
+                "ajax": "../lib/functions.php?action=getItmData",
                 "columns": [
                     { "data": "id","width": "2%" },
                     { "data": "label" },

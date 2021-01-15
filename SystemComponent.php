@@ -15,8 +15,8 @@ class SystemComponent {
         $settings["dbusername"] = "root";
         $settings["dbpassword"] = "";
 		
-		$settings["upfolder"] = "http://localhost/tagapp/upload_images/items/";
-		$settings["upfolderserver"] = "/tagapp/upload_images/items/images/";
+		$settings["upfolder"] = "http://localhost/upload_images/items/";
+		$settings["upfolderserver"] = "/upload_images/items/images/";
 		
 		/*
 		

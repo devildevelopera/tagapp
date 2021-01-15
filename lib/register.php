@@ -31,7 +31,7 @@ if(isset($_REQUEST['user_email']) && isset($_REQUEST['user_name']) && isset($_RE
                 $_SESSION['main']['email']=$getuserId['email'];
                 $_SESSION['main']['name']=$getuserId['name'];
                 $_SESSION['main']['id']=$getuserId['id'];
-                echo "<script>window.location.href='http://localhost/tagapp/dashboard.php'</script>";
+                echo "<script>window.location.href='./dashboard.php'</script>";
             } else {
                 echo 'Register failed';
             };

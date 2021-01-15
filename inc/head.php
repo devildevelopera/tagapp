@@ -4,7 +4,7 @@
 <?php
     //Hitesh Commented to bypas login page
     if(!isset($_SESSION['main'])){
-        header("Location: ../tagapp/index.php");
+        header("Location: ../index.php");
     }
     require_once('lib/connection.php');
 ?>
