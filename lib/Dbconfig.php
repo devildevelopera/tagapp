@@ -16,7 +16,7 @@ class Dbconfig {
         //if($_SERVER['SERVER_NAME']==='localhost'){
           $this -> serverName = 'localhost';
           $this -> userName = 'root';
-          $this -> passCode = '';
+          $this -> passCode = 'password';
           $this -> dbName = 'tagapp';//'tags';//
         //}
     }
