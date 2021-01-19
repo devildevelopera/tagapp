@@ -27,7 +27,11 @@ class Mysql extends Dbconfig    {
     }
 
     function dbConnect()    {
-        $this->connectionString = mysqli_connect($this->serverName,$this->userName,$this->passCode,$this->databaseName);
+        $this->connectionString = mysqli_connect($this->hostName,$this->userName,$this->passCode,$this->databaseName);
+		if (!$this->connectionString) {
+			echo mysqli_connect_errno() . ":" . mysqli_connect_error() . $this->hostName;
+			exit;
+		}
         return $this->connectionString;
     }
 

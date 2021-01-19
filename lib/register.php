@@ -10,7 +10,7 @@ if(isset($_REQUEST['user_email']) && isset($_REQUEST['user_name']) && isset($_RE
 	$textpass=$_REQUEST['password'];
 
 	$cons= new Mysql();
-	$getRes= $cons->dbConnect();
+    $getRes= $cons->dbConnect();
     $testQry = 'select * from users';
 	if(isset($textuemail) && isset($textuname) && isset($textpass) && (empty($textuemail) || empty($textuname) || empty($textpass))){
 		echo "Please fill Email &amp; Username &amp; Password!";

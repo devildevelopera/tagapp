@@ -14,10 +14,10 @@ class Dbconfig {
 	
     function Dbconfig() {
         //if($_SERVER['SERVER_NAME']==='localhost'){
-          $this -> serverName = 'localhost';
-          $this -> userName = 'root';
-          $this -> passCode = 'password';
-          $this -> dbName = 'tagapp';//'tags';//
+          $this -> serverName = '107.170.213.186';
+          $this -> userName = 'tagapp_user';
+          $this -> passCode = 'tagapp_password';
+          $this -> dbName = 'tagapp_new';//'tags';//
         //}
     }
 
